@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
 
-const apiKey = '3b836641b4f00cbc4ad64f986d526481';//'853fd6198d9079a5148e34f14d16347d'; //  '*****************';
+const apiKey = '3b836641b4f00cbc4ad64f986d526481'; // '*****************';
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -12,6 +12,7 @@ app.set('view engine', 'ejs')
 app.get('/', function (req, res) {
   res.render('index', {weather: null, error: null});
 })
+
 
 app.post('/', function (req, res) {
   let city = req.body.city;
